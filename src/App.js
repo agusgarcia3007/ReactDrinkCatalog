@@ -1,20 +1,30 @@
 import React  from 'react';
 import Header from './components/Header';
 import Form from './components/Form';
-import Provider from './context/Categories';
+import List from './components/List';
+
+import CategoriesProvider from './context/Categories';
+import RecipesProvider from './context/Recipes';
+import ModalProvider from './context/Modal';
 
 const App = () => {
     return ( 
-        <Provider>
-            <Header />
+        <CategoriesProvider>
+            <RecipesProvider>
+               <ModalProvider>
+                    <Header />
 
 
-            <div className="container mt-5">
-                <div className="row">
-                    <Form />
-                </div>
-            </div>
-        </Provider>
+                    <div className="container mt-5">
+                        <div className="row">
+                            <Form />
+                        </div>
+
+                        <List />
+                    </div>
+               </ModalProvider>
+            </RecipesProvider>
+        </CategoriesProvider>
      );
 }
  

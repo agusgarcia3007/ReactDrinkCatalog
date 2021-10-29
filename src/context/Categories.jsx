@@ -6,7 +6,7 @@ import React, { createContext, useState, useEffect } from 'react';
 export const CategoriesContext = createContext();
 
 //provider
-const Provider = (props) => {
+const CategoriesProvider = (props) => {
 
     
     //state context
@@ -34,4 +34,4 @@ const Provider = (props) => {
     )
 }
 
-export default Provider;
+export default CategoriesProvider;
