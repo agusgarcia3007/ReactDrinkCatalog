@@ -1,6 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, {  useContext } from 'react';
+import { CategoriesContext } from '../context/Categories';
 
 const Form = () => {
+
+
+    const { categories } =useContext(CategoriesContext);
+    
+
     return ( 
 
         <form
@@ -14,14 +20,19 @@ const Form = () => {
                 <div className="col-md-4">
                     <input
                         name='ingredients'
-                        className='form-control'
+                        className='form-control mb-2'
                         type='text'
                         placeholder='ingredients'
                     />
                 </div>
                 <div className="col-md-4">
-                    <select className='form-control' name='category'>
+                    <select className='form-control mb-2' name='category'>
                         <option value="">-Choose Category-</option>
+                        {categories.map( x => (
+                            <option key={x.strCategory} value={x.strCategory} >
+                                {x.strCategory}
+                            </option>
+                        ))}
                     </select>
                 </div>
                 <div className="col-md-4">
