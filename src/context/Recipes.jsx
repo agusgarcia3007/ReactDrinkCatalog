@@ -28,7 +28,7 @@ const RecipesProvider = props => {
             apiFetchR();
             
         }
-    },[searchRecipe])
+    },[searchRecipe, category, ingredients, fetch])
     
 
     return(
